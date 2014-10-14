@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Biswajit's Hackers News|Comments</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+        <link href="../static/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+        <link href="../static/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+ </head>
+    <body>
+           
+
+        <div class="container">
+        <div class="jumbotron"><h3><b>Hacker's news</b>|Comments</h3></div>
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="#">Users</a></li>
+  <li class="active">Comments</li>
+</ol>
+            <ol>
+            {% for comment in comments %}
+                <li><a href="/user/{{comment.by}}">{{comment.by}}</a> </br>
+                Text: {{comment.text}}|<a href="/comments/{{comment.id}}"> {{comment.id}}</a></li>
+            {% endfor %}
+            </ol>
+        </div>
+	 <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="../static/js/bootstrap.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+    </body>
+</html>
